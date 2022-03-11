@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Main from './components/Main/Main';
+import Navbar from './components/Navbar/Navbar';
+import CountryDetail from './components/Countries/CountryDetail';
+import Loader from './UI/Loader';
+import classes from './App.module.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [darkMode, setDarkMode] = useState(false);
+	const darkModeHandler = () => {
+		setDarkMode(!darkMode);
+	};
+	return (
+		<div className={`${classes.app} ${darkMode ? classes.dark : ''}`}>
+			<Navbar onToggle={darkModeHandler} isDarkMode={darkMode} />
+			<Switch>
+				<Route exact path="/">
+					<Main isDarkMode={darkMode} />
+				</Route>
+				<Route exact path="/countries">
+					<Main isDarkMode={darkMode} />
+				</Route>
+				<Route exact path="/country/:countryName">
+					<CountryDetail isDarkMode={darkMode} />
+				</Route>
+				<Route exact path="/country/loader">
+					<Loader isDarkMode={darkMode} />
+				</Route>
+			</Switch>
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,24 @@
+.countries {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+	.countries {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.countries {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.countries {
+		grid-template-columns: 1fr;
+	}
+}

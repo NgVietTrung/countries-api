@@ -1,0 +1,44 @@
+.country {
+	height: auto;
+	background-color: white;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.flag {
+	height: 190px;
+}
+
+.flag img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.info {
+	padding: 3rem 2.5rem 4.5rem;
+}
+
+.name {
+	font-size: 2rem;
+	font-weight: 800;
+	margin-bottom: 2rem;
+}
+
+.des {
+	font-size: 1.4rem;
+}
+
+.des span {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.dark {
+	background-color: hsl(209, 23%, 22%);
+	color: white;
+}
